@@ -5,10 +5,21 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+body {
+    height: 100vh;
+}
+
 .grid-container {
     display: grid;
-    background-color: aqua;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 327px auto 200px;
+    height: 100vh;
+    background: #bdc3c7;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -16,8 +27,7 @@
 
 header {
     grid-column: 1/13;
-    background-color: bisque;
-    opacity: 0.8;
+
 }
 
 nav {
@@ -28,7 +38,24 @@ nav {
 .nav-img-container {
     display: flex;
     flex-grow: 1;
+    /* background-image: url("/img/snowboard.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; */
+    height: 200px;
+    perspective: 1000px;
+    perspective-origin: center;
+
 }
+
+.nav-img-container img {
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg) rotateY(30deg) translateZ(100px);
+
+}
+
 
 .nav-item-container {
     display: flex;
@@ -41,38 +68,136 @@ nav {
     align-items: center;
     width: 100%;
     list-style-type: none;
-    background-color: rgb(81, 81, 127);
+
 }
 
 .nav-item-container li {
     font-size: 1.7rem;
     padding: 10px 20px;
+    border-right: 2px solid black
 }
 
 .nav-item-container li a {
     text-decoration: none;
+    color: white;
+
 }
 
 nav .form-container {
     display: flex;
     flex-grow: 1;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
 
+}
+
+.form-container form {
+    width: 65%;
+}
+
+form>p {
+    margin-top: 4%;
+}
+
+label,
+input,
+button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+label {
+    margin: 2% 0;
+}
+
+input {
+    background: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+button {
+    color: white;
+    margin-top: 20px;
+    background: #1DA1F2;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
 }
 
 /* HEADER AND THE NAVIGATION ------------End */
 main {
-
     display: grid;
     grid-column: 1/13;
     grid-template-columns: 1fr 1fr;
-    grid-row: span;
-    background-color: bisque;
+    background-color: #1a2830
 }
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.content p {
+    color: #adb7bd;
+    font-family: 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    text-indent: 30px;
+    width: 90%;
+}
+
+.cap {
+    font-size: 2.5rem;
+}
+
+h1 {
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 58px;
+    margin: 0 0 58px;
+    width: 90%;
+
+}
+
+.main-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    perspective: 40vw;
+    perspective-origin: 50% 50%;
+
+}
+
+.main-img-container img {
+    border-radius: 20px;
+    box-shadow: rgb(208, 221, 236) 0px 20px 30px -10px;
+    transform: rotateY(-16deg);
+}
+
+
 
 footer {
     grid-column: 1/13;
-    background-color: blanchedalmond;
+
 
 }
 
@@ -83,4 +208,27 @@ footer {
 .footer-links {
     display: flex;
     justify-content: space-evenly;
+}
+
+.text {
+    color: #e0e0e0;
+    font-family: "Arial Black", Gadget, sans-serif;
+    text-shadow: 0px 0px 0 rgb(210, 210, 210),
+        1px 1px 0 rgb(196, 196, 196),
+        2px 2px 0 rgb(182, 182, 182),
+        3px 3px 0 rgb(168, 168, 168),
+        4px 4px 0 rgb(153, 153, 153),
+        5px 5px 0 rgb(139, 139, 139),
+        6px 6px 0 rgb(125, 125, 125),
+        7px 7px 0 rgb(111, 111, 111),
+        8px 8px 0 rgb(97, 97, 97),
+        9px 9px 0 rgb(83, 83, 83),
+        10px 10px 9px rgba(217, 208, 208, 0.72),
+        10px 10px 1px rgba(217, 208, 208, 0.5),
+        0px 0px 9px rgba(217, 208, 208, .2);
+}
+
+.svg {
+    width: 100px;
+    height: 100px
 }
